@@ -3,12 +3,10 @@
 # Given: A DNA string t having length at most 1000 nt.
 # Return: The transcribed RNA string of t.
 
-input = open('rosalind_rna.txt', 'r')
-t = input.read()
-input.close()
+with open('rosalind_rna.txt') as f:
+    t = f.read()
 
 rna = t.replace('T', 'U')
 
-output = open('02_rna.txt', 'w')
-output.write(rna)
-output.close()
+with open('02_rna.txt', 'w') as f:
+    f.write(rna)

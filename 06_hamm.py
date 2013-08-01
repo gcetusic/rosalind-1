@@ -3,9 +3,8 @@
 # Given: Two DNA strings s and t of equal length (not exceeding 1 kbp).
 # Return: The Hamming distance dH(s,t).
 
-input = open('rosalind_hamm.txt', 'r')
-args = input.read()
-input.close()
+with open('rosalind_hamm.txt') as f:
+    args = f.read()
 
 args = args.split("\n")
 s = args[0]
@@ -19,6 +18,5 @@ while i < n:
         answer += 1
     i += 1
 
-output = open('06_hamm.txt', 'w')
-output.write(str(answer))
-output.close()
+with open('06_hamm.txt', 'w') as f:
+    f.write(str(answer))

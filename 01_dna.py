@@ -4,13 +4,10 @@
 # Return: Four integers (separated by spaces) counting the respective number of
 # times that the symbols 'A', 'C', 'G', and 'T' occur in s.
 
-input = open('rosalind_dna.txt', 'r')
-s = input.read()
-input.close()
+with open('rosalind_dna.txt') as f:
+    s = f.read()
 
-answer = str(s.count('A')) + ' ' + str(s.count('C')) + ' ' + str(s.count('G')) \
-       + ' ' + str(s.count('T'))
+answer = '%s %s %s %s' % (s.count('A'), s.count('C'), s.count('G'), s.count('T'))
 
-output = open('01_dna.txt', 'w')
-output.write(answer)
-output.close()
+with open('01_dna.txt', 'w') as f:
+    f.write(answer)

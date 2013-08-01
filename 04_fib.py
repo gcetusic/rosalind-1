@@ -5,9 +5,8 @@
 # we begin with 1 pair and in each generation, every pair of reproduction-age
 # rabbits produces a litter of k rabbit pairs (instead of only 1 pair).
 
-input = open('rosalind_fib.txt', 'r')
-args = input.read()
-input.close()
+with open('rosalind_fib.txt') as f:
+    args = f.read()
 
 args = args.split(' ')
 n = int(args[0])
@@ -27,6 +26,5 @@ def fib(n):
 
 rabbits = fib(n)
 
-output_file = open('04_fib.txt', 'w')
-output_file.write(str(rabbits))
-output_file.close()
+with open('04_fib.txt', 'w') as f:
+    f.write(str(rabbits))

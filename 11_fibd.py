@@ -4,9 +4,8 @@
 # Return: The total number of pairs of rabbits that will remain after the n-th
 # month if all rabbits live for m months.
 
-input = open('rosalind_fibd.txt', 'r')
-args = input.read()
-input.close()
+with open('rosalind_fibd.txt') as f:
+    args = f.read()
 
 args = args.split(' ')
 n = int(args[0])
@@ -28,6 +27,5 @@ def fib(n):
 
 rabbits = fib(n)
 
-output = open('11_fibd.txt', 'w')
-output.write(str(rabbits))
-output.close()
+with open('11_fibd.txt', 'w') as f:
+    f.write(str(rabbits))

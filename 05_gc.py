@@ -4,9 +4,8 @@
 # Return: The ID of the string having the highest GC-content, followed by the
 # GC-content of that string.
 
-input = open('rosalind_gc.txt', 'r')
-dna_strings = input.read()
-input.close()
+with open('rosalind_gc.txt') as f:
+    dna_strings = f.read()
 
 dna_strings = dna_strings.split('>')
 highest_gc = 0
@@ -24,8 +23,7 @@ while i < n:
         highest_gc_id = id
     i += 1
 
-answer = current_highest_id + "\n" + str(current_highest_gc)
+answer = '%s\n%s' % (highest_gc_id, highest_gc)
 
-output = open('05_gc.txt', 'w')
-output.write(str(answer))
-output.close()
+with open('05_gc.txt', 'w') as f:
+    f.write(answer)
