@@ -16,7 +16,7 @@ n = len(a)
 while i < n:
     dna_string = dna_strings[i]
     id = dna_string[:13]
-    dna_string = dna_string[14:].replace("\n", '')
+    dna_string = dna_string[14:].strip('\n')
     gc = (dna_string.count('G') + dna_string.count('C')) / float(len(dna_string)) * 100
     if gc > highest_gc:
         highest_gc = gc
